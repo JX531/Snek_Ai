@@ -134,14 +134,9 @@ class Game:
 
         
         if self.training_mode: #just to check progress on training sessions
-            if game.sessions == 10000:
+            if game.sessions % 1000 == 0:
                 print("Sessions Completed : {}".format(game.sessions))
-            if game.sessions == 20000:
-                print("Sessions Completed : {}".format(game.sessions))
-            if game.sessions == 30000:
-                print("Sessions Completed : {}".format(game.sessions))
-            if game.sessions == 40000:
-                print("Sessions Completed : {}".format(game.sessions))
+
 
         
 

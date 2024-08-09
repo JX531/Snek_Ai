@@ -19,7 +19,7 @@ class Game:
         self.sessions = 0 #for training, to track number of sessions completed
         self.training_mode = False #set true for training, training mode turns off window
         
-        if not self.training_mode: #if not in training mode, game will be displayed on window etc
+        if not self.training_mode: #if not in training mode, game will be displayed on window 
             self.window = tk.Tk()
             self.window.title('Snake')
 

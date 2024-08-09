@@ -13,7 +13,7 @@ class AI:
 
     def getState(self,snake_body,apple,direction):
         head = snake_body[0]
-        #states are position of head, distance to apple, direction, safety of area nearby head
+        #states are position of head, distance to apple, direction, safety of area around head
         state = (head[0],head[1], apple[0] - head[0], apple[1] - head[1], direction,
                  self.isUnsafe(snake_body, head[0], head[1] +1),
                  self.isUnsafe(snake_body, head[0], head[1] -1),
@@ -21,7 +21,7 @@ class AI:
                  self.isUnsafe(snake_body, head[0]-1, head[1])) 
         return state
     
-    def isUnsafe(self,body,a,b):
+    def isUnsafe(self,body,a,b): #checks if location [a,b] is a segment of body
         if ([a,b] in body):
             return 1
         return 0
@@ -40,8 +40,8 @@ class AI:
     
     def learn(self, state, action, reward, next_state, terminal=False):
         q_predict = self.getQvalue(state, action)
-        if terminal:
-            q_actual = reward  # No future rewards after a terminal state
+        if terminal: #when game ends due to wall collision
+            q_actual = reward  #no future rewards after a terminal state
         else:
             q_actual = reward + self.gamma * max(self.getQvalue(next_state, a) for a in range(len(self.actions)))
         self.q_table[state][action] += self.alpha * (q_actual - q_predict)
@@ -55,7 +55,7 @@ class AI:
         with open('Snake_Qtable.pkl','rb') as f:
             self.q_table = pickle.load(f)
 
-    def load_partial(self):
+    def load_partial(self): #just used to check if file got corrupted
         try:
             with open('Snake_Qtable.pkl', 'rb') as f:
                 data = pickle.load(f)
@@ -63,10 +63,13 @@ class AI:
         except (EOFError, pickle.UnpicklingError) as e:
             print(f"Error loading file: {e}")
             return None
+
+#uncommenting following 2 lines and running this file will RESET the qtable
 # agent = AI()
+# agent.save()
+
 
 #Attempt to load the partially corrupted file
-
 # data = agent.load_partial()
 
 # if data is None:
@@ -74,7 +77,7 @@ class AI:
 #     # Handle the case where the file is not recoverable
 #     data = {}  # Start fresh
 
-# agent.save()
+
 
 
 

@@ -5,7 +5,7 @@ from Ai import AI
 
 class Game:
     def __init__(self, scale=50):
-        self.snake = Snake(size)
+        self.snake = Snake(10)
         self.agent = AI()
         self.agent.load() #load in qtable
 
@@ -34,7 +34,7 @@ class Game:
             self.highscore_label.pack(anchor='w')
 
             #adjust the canvas size according to the scale
-            self.canvas = tk.Canvas(self.window, height=size * self.scale, width=size * self.scale, bg='grey')
+            self.canvas = tk.Canvas(self.window, height=10 * self.scale, width=10 * self.scale, bg='grey')
             self.canvas.pack()
 
 

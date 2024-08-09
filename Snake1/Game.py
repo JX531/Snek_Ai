@@ -4,7 +4,7 @@ from Snake import Snake
 from Ai import AI
 
 class Game:
-    def __init__(self, size=10, scale=50):
+    def __init__(self, scale=50):
         self.snake = Snake(size)
         self.agent = AI()
         self.agent.load() #load in qtable
@@ -13,7 +13,7 @@ class Game:
         self.score = 0
         self.highscore = 0
         self.apple = [0,0,-1] #coordinates of apple and if apple has been spawned, -1 at init, swaps between 0 and 1 after first spawn
-        self.gridsize = size
+        self.gridsize = 10 #keeping gridsize small for now, changing this value will increase qspace and require further training
         self.scale = scale  #set the scale for grid size
 
         self.sessions = 0 #for training, to track number of sessions completed

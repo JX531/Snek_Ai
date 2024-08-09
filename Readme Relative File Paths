@@ -1,0 +1,6 @@
+#Relative file paths of the files used during coding / testing just in case it cannot find path to Snake_Qtable.pkl
+Python\Snake2\Ai.py
+Python\Snake2\Game.py
+Python\Snake2\Snake.py
+
+Snake_Qtable.pkl

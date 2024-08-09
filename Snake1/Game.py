@@ -149,12 +149,12 @@ if not game.training_mode:
 else: #training mode
     try:
         print("Started")
-        while game.sessions < 20000: #change number here to edit number of sessions to train on
+        while game.sessions < 10000: #change number here to edit number of sessions to train on
             game.play()
             
         print('Highscore Achieved : {}'.format(game.highscore)) #highscore after training sessions completed
 
-    except KeyboardInterrupt: #ctrl+c in console to interrupt, MIGHT CORRUPT QTABLE FILE
+    except KeyboardInterrupt: #ctrl+c in console to interrupt
         print("Training aborted by user.")
         print('Highscore Achieved : {}'.format(game.highscore))
 

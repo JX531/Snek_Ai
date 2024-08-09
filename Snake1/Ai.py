@@ -48,8 +48,10 @@ class AI:
 
     
     def save(self):
-        with open('Snake_Qtable.pkl', 'wb') as f:
-            pickle.dump(self.q_table,f)
+        with open('Snake_Qtable_temp.pkl', 'wb') as f:
+            pickle.dump(self.q_table,f) #write to temp file
+            
+        os.replace('Snake_Qtable_temp.pkl', 'Snake_Qtable.pkl') #replaces to prevent corruption
     
     def load(self):
         with open('Snake_Qtable.pkl','rb') as f:

@@ -8,6 +8,7 @@ After several days of training, it reached a meager high score of 27.
 
 Snake2 came after many rounds of trial and error, trying to improve upon Snake1.
 To fix the looping issue, I added a reward of -0.01 to each move it made that did not result in death or an apple, thus incentivizing it against looping endlessly to stay alive without actively chasing apples.
+
 In an attempt to keep it alive longer at longer lengths, I tried many things to add more to its states. 
 These include adding the relative distance of its head to its mid section and tails to give it an idea of its shape and also expanding the area around the ahead it could see was safe/unsafe.
 This ended in failure, as the Q space became too large and its performance was worse than Snake1 even after several days of around the clock training.

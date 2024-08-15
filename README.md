@@ -16,6 +16,6 @@ Then, I tried the opposite of simplifying its Q table instead. Rather than the X
 Was the apple to the left of the head? Was the apple to the right of the head? Was the apple above the head? Was the apple below the head?
 I also removed the relative distances of the head to the mid sections and tails to reduce the Q space even further, and the result was a lot better than I expected.
 
-While Snake1 reached a highscore of 27 after several days of training, Snake2 managed to hit a far higher 37.1 ( as of writing this, further testing is still being done ) in a single afternoon.
+While Snake1 reached a highscore of 27 after several days of training, Snake2 managed to hit a far higher 38 ( as of writing this, further testing is still being done ) in a single afternoon.
 This project has really improved my understanding of optimising performance with simple Q tables, which I hope to take forward with me on future experiments with different types of AI to play snake.
 

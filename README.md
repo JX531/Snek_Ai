@@ -18,5 +18,5 @@ Was the apple to the left of the head? Was the apple to the right of the head? W
 I also removed the relative distances of the head to the mid sections and tails to reduce the Q space even further, and the result was a lot better than I expected.
 
 While Snake1 reached a highscore of 27 after several days of training, Snake2 managed to reach 40 in a single afternoon, which is where I decided to stop training this version for now.
-This project has really improved my understanding of optimising performance with simple Q tables, which I will take forward with me on future endeavours. 
+
 
